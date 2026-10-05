@@ -112,46 +112,46 @@ export const PAGES: Page[] = [
     id: "skills",
     eyebrow: "Automatisation",
     title: "Les Skills",
-    sub: "Créer des commandes personnalisées pour Claude Code",
+    sub: "Des workflows réutilisables pour tes tâches récurrentes",
     phrase:
-      "Un skill est un script ou une suite de commandes packagée sous un slash-command (/skill-name) que vous pouvez déclencher dans Claude Code.",
+      "Un skill est un workflow personnalisé — une séquence d'étapes empaquetée et déclenchée par un slash-command (/nom-du-skill) que tu réutilises sans la réécrire.",
     source: {
       label: "Lire la documentation",
       url: "https://code.claude.com/docs/en/skills",
     },
     explain: {
       intro:
-        "Plutôt que de refaire les mêmes tâches manuellement, vous créez un skill — une mini-automation déclenchée par un raccourci textuel.",
+        "Imagine une checklist que tu fais tout le temps : « lancer les tests, corriger les erreurs, formater, commit ». Au lieu de l'exécuter manuellement à chaque fois, tu la graves une fois dans un skill, et ensuite tu dis /ma-checklist pour tout faire d'un coup.",
       bullets: [
         [
-          "Chaining de commandes",
-          "/deploy pourrait enchaîner test → build → push → deploy automatiquement.",
+          "Une fois écrit, réutilisable",
+          "Le skill vit dans ton projet (.claude/skills/) et tu l'utilises dans chaque session.",
         ],
         [
-          "Réutilisable",
-          "Une fois créé, le skill est disponible dans toutes vos sessions.",
+          "Économise des étapes répétitives",
+          "Pas besoin de taper les mêmes commandes ou de refaire le même prompt à chaque fois.",
         ],
         [
-          "Personnalisé",
-          "Adapté à votre workflow, votre stack, vos préférences.",
+          "Tailored à ton workflow",
+          "Tu décides quoi inclure : tests, linting, build, deploy, génération de docs, etc.",
         ],
       ],
     },
-    exLabel: "Créer un skill simpe",
-    code: `#!/bin/bash
-# .claude/skills/lint-fix/run.sh
+    exLabel: "Exemple : un skill de pre-commit",
+    code: `# .claude/skills/pre-commit/SKILL.md
+description: >
+  Vérifie et nettoie avant commit : lint, format, tests.
 
-echo "Running lint..."
+---
+
 npm run lint
-
-echo "Fixing with prettier..."
 npm run format
-
-echo "✅ Linting and formatting complete"`,
+npm run test -- --run
+echo "✅ Prêt à commit"`,
     memo: [
-      "Les skills sont documentés dans .claude/skills/ ou .claude/hooks/",
-      "Accessible via /nom-du-skill dans Claude Code",
-      "Parfait pour les tâches répétitives du projet",
+      "Chaque skill = un dossier dans .claude/skills/ avec SKILL.md + run.sh",
+      "Lance avec /nom-du-skill ; Claude te guide ou exécute automatiquement",
+      "Parfait pour les routines projet : test → build, deploy, cleanup, etc.",
     ],
   },
 ];
