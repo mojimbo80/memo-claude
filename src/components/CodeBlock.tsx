@@ -19,14 +19,21 @@ export function CodeBlock({ code }: CodeBlockProps) {
 
   return (
     <div className="relative">
-      <pre className="bg-gray-900 text-gray-200 p-4 rounded-lg overflow-x-auto text-sm leading-relaxed">
+      <pre
+        className="p-4 overflow-x-auto text-sm leading-relaxed font-mono"
+        style={{
+          backgroundColor: `hsl(var(--code-bg))`,
+          color: `hsl(var(--code-fg))`,
+          borderRadius: "var(--radius)",
+        }}
+      >
         <code>
           {code.split("\n").map((line, i) => (
             <div key={i}>
-              {line.startsWith("#") ? (
-                <span className="text-orange-400">{line}</span>
+              {line.trim().startsWith("#") || line.trim() === "---" ? (
+                <span style={{ color: `hsl(var(--code-accent))` }}>{line}</span>
               ) : (
-                line
+                <span>{line}</span>
               )}
             </div>
           ))}
@@ -34,7 +41,18 @@ export function CodeBlock({ code }: CodeBlockProps) {
       </pre>
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-2 px-3 py-2 border border-gray-300 bg-white rounded text-sm cursor-pointer hover:bg-gray-50"
+        className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-mono border transition-colors"
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          borderColor: "rgba(255, 255, 255, 0.2)",
+          color: `hsl(var(--code-fg))`,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+        }}
         aria-label="Copy code"
       >
         {copied ? "✓ Copié" : "📋 Copier"}

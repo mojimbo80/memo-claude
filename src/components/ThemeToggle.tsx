@@ -40,10 +40,10 @@ export function ThemeToggle({ isDark, setIsDark }: ThemeToggleProps) {
   return (
     <button
       onClick={toggle}
-      className="px-3 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded text-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800"
       aria-label={isDark ? "Light mode" : "Dark mode"}
+      className="px-3 py-1.5 border border-border hover:border-primary rounded-full text-muted hover:text-primary transition-colors font-mono text-xs flex items-center gap-1"
     >
-      {isDark ? "☀️" : "🌙"}
+      {isDark ? "☀ clair" : "☾ sombre"}
     </button>
   );
 }

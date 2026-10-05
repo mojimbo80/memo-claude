@@ -1,4 +1,4 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./CodeBlock-BLwlkww3.js";var r,i,a,o;function s(){return(s=e((()=>{t(),r={title:`Components/CodeBlock`,component:n,parameters:{layout:`padded`}},i={args:{code:`function hello() {
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./CodeBlock-vrIKZwAa.js";var r,i,a,o;function s(){return(s=e((()=>{t(),r={title:`Components/CodeBlock`,component:n,parameters:{layout:`padded`}},i={args:{code:`function hello() {
   console.log("Hello, World!");
   # This is a comment
   return true;
