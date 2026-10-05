@@ -1,0 +1,25 @@
+name: CI
+
+# Pipeline de validation, sur chaque Pull Request vers main.
+# Minimal pour l'instant : vérifie seulement que l'installation passe.
+# À enrichir plus tard : lint, typecheck, test, build.
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verifications:
+    name: install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
