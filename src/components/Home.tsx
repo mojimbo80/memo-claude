@@ -4,11 +4,11 @@ import { PAGES } from "../pages";
 export function Home() {
   return (
     <div>
-      <div className="mb-12 text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-4">
-          Mémo Claude
+      <div className="mb-16 text-center">
+        <h1 className="font-display text-6xl font-bold mb-4">
+          <span className="text-primary">⚡</span> Mémo Claude
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-muted">
           Concepts de Claude Code, expliqués en français.
         </p>
       </div>
@@ -19,31 +19,33 @@ export function Home() {
             key={page.id}
             to="/$pageId"
             params={{ pageId: page.id }}
+            className="block"
           >
             <button
-              className="w-full px-6 py-6 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg transition hover:border-gray-900 dark:hover:border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 text-left"
+              className="w-full bg-primary hover:bg-primary-dark text-white p-6 cursor-pointer transition-all active:translate-y-0.5 shadow-sm border-b-[3px] border-primary-dark hover:shadow-md"
+              style={{ borderRadius: "var(--radius)" }}
             >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+              <div className="flex items-center justify-between gap-4 text-left">
+                <div className="flex-1">
+                  <div className="font-mono text-sm font-medium mb-1 opacity-80">
                     {String(index + 1).padStart(2, "0")}
                   </div>
-                  <div className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-1">
+                  <div className="font-display font-bold text-base mb-1">
                     {page.title}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm opacity-80">
                     {page.sub}
                   </div>
                 </div>
-                <div className="text-2xl ml-4">→</div>
+                <div className="text-2xl flex-shrink-0">→</div>
               </div>
             </button>
           </Link>
         ))}
       </div>
 
-      <div className="mt-12 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg text-center">
-        <p className="text-sm text-gray-600 dark:text-gray-400 m-0">
+      <div className="mt-16 pt-8 border-t-2 border-dashed border-border text-center">
+        <p className="font-mono text-xs text-muted">
           Chaque thème contient une phrase clé, une explication simple, un exemple de code et un mémo.
         </p>
       </div>

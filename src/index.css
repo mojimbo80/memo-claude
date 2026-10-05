@@ -2,10 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
+@layer base {
+  :root {
+    /* Light theme */
+    --bg: 30 87% 98%;
+    --bg2: 30 70% 90%;
+    --card: 0 0% 100%;
+    --fg: 12 9% 16%;
+    --muted: 25 9% 42%;
+    --border: 30 50% 87%;
+    --primary: 25 71% 57%;
+    --primary-dark: 25 72% 42%;
+    --accent: 25 83% 90%;
+    --accent-fg: 25 72% 42%;
+    --code-bg: 12 9% 16%;
+    --code-fg: 30 73% 93%;
+    --code-accent: 30 90% 65%;
+    --radius: 14px;
+  }
+
+  .dark {
+    --bg: 12 9% 10%;
+    --bg2: 25 17% 15%;
+    --card: 25 17% 15%;
+    --fg: 30 33% 95%;
+    --muted: 25 12% 72%;
+    --border: 25 11% 22%;
+    --primary: 25 78% 61%;
+    --primary-dark: 25 68% 48%;
+    --accent: 25 33% 22%;
+    --accent-fg: 25 78% 61%;
+    --code-bg: 12 20% 7%;
+    --code-fg: 30 73% 93%;
+    --code-accent: 30 90% 65%;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply font-sans bg-bg text-fg;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
 }
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
+* {
+  box-sizing: border-box;
 }
