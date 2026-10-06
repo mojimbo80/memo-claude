@@ -17,19 +17,29 @@ tableau PAGES de `src/pages.ts`.
 - Vérifie les faits sur https://code.claude.com/docs. La `source` pointe vers la page
   pertinente (url en https://).
 
-## 2. Style d'écriture (IMPÉRATIF — c'est le cœur du skill)
-Écris comme dans l'exemple de référence ci-dessous. Règles :
-- Français, **tutoiement** ("tu", "ton projet").
-- Phrases **courtes et directes**. Pas de jargon sans l'expliquer.
-- La "phrase" : une seule idée, claire, qui dit CE QUE C'EST et À QUOI ÇA SERT.
-- L'intro de l'explication : commence par une **analogie concrète du quotidien**
-  ("Imagine un nouveau développeur qui rejoint ton équipe…").
-- Les bullets : chaque paire = un **label court en gras** + une explication brève.
-  Souvent sous forme "X → conséquence" (ex. "À la racine du projet → partagé avec l'équipe").
-- Le mémo : 3 à 4 puces **télégraphiques**, mémorisables d'un coup d'œil.
+## 2. Style narratif (pédagogie — à appliquer partout)
+Tu guides un débutant, tu n'écris pas une doc. Principes :
+- Pars du **problème ou de la situation** avant la définition (fais sentir le besoin).
+- Une seule **analogie concrète du quotidien**, tenue jusqu'au bout (n'en mélange pas deux).
+- **Tutoiement**, voix active, phrases **courtes** : une idée par phrase.
+- Nomme les choses comme le lecteur les **vit**, pas comme le système les implémente.
+  Le jargon vient APRÈS l'intuition, et toujours expliqué à sa première apparition.
+- **Montre un exemple concret avant** d'énoncer la règle générale.
+- Progression **simple → nuancé** : aucune exception ni cas limite dans la phrase d'ouverture.
+- Adresse-toi au lecteur ("tu gagnes…", "attention à…").
+- Quand c'est pertinent, anticipe **le piège classique** du débutant
+  ("on croit souvent que… alors qu'en fait…").
+- Garde le **même rythme/format** que les autres pages (régularité = confort de lecture).
 - Pédagogique et bienveillant, jamais pompeux. On explique, on ne récite pas la doc.
 
-## 3. Forme attendue (type Page)
+## 3. Style d'écriture par section
+- La "phrase" : une seule idée claire — CE QUE C'EST + À QUOI ÇA SERT.
+- L'intro de l'explication : commence par l'analogie.
+- Les bullets : label court en gras + explication brève, souvent "X → conséquence".
+- Le mémo : 3 à 4 puces **télégraphiques**, mémorisables d'un coup d'œil
+  (si une puce a besoin d'une virgule explicative, elle n'est pas assez mûre).
+
+## 4. Forme attendue (type Page)
 - id, eyebrow (catégorie courte), title, sub (sous-titre d'une ligne)
 - phrase
 - source : { label, url }
@@ -38,7 +48,7 @@ tableau PAGES de `src/pages.ts`.
 - exLabel2 + code2 : optionnels
 - memo : 3 à 4 puces
 
-## 4. Exemple de référence (à imiter pour le ton)
+## 5. Exemple de référence (à imiter pour le ton)
 - title : "CLAUDE.md"
 - phrase : "CLAUDE.md est un fichier texte placé à la racine de ton projet. Claude Code
   le lit tout seul au démarrage et s'en sert comme mémoire : commandes utiles,
@@ -56,7 +66,7 @@ tableau PAGES de `src/pages.ts`.
   - "Racine = partagé · ~/.claude/ = perso."
   - "Court, concret, orienté « comment faire »."
 
-## 5. Après
+## 6. Après
 - Relis : id unique, source en https, structure complète, ton conforme à l'exemple.
 - Lance `npm run typecheck` et `npm run test`.
 - NE committe PAS et NE pousse PAS toi-même : laisse l'utilisateur relire et committer.

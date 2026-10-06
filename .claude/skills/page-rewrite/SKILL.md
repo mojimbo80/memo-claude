@@ -17,21 +17,28 @@ retour de l'utilisateur. Tu ne pars pas de zéro : tu améliores l'existant.
   trop long ? trop technique ? analogie peu claire ? exemple à revoir ? mémo flou ?
 - Lis l'objet Page concerné dans src/pages.ts pour partir de son contenu actuel.
 
-## 2. Réécrire en gardant le style maison (IMPÉRATIF)
-- Français, tutoiement, phrases courtes et directes.
-- "phrase" : une seule idée claire (ce que c'est + à quoi ça sert).
-- intro de l'explication : une analogie concrète du quotidien.
-- bullets : label court en gras + explication brève, souvent "X → conséquence".
-- mémo : 3 à 4 puces télégraphiques.
-- Pédagogique, jamais pompeux. On n'ajoute pas de jargon non expliqué.
-- Ne change QUE ce qui est demandé ; garde intact ce qui convenait déjà.
-  (Si le retour est vague, propose 1 à 2 variantes courtes de la partie concernée
-  avant de modifier le fichier.)
+## 2. Style narratif (pédagogie — la cible de toute réécriture)
+Tu guides un débutant, tu n'écris pas une doc. Vise :
+- Partir du **problème ou de la situation** avant la définition.
+- Une seule **analogie concrète du quotidien**, tenue jusqu'au bout.
+- **Tutoiement**, voix active, phrases **courtes** : une idée par phrase.
+- Nommer les choses comme le lecteur les **vit** ; le jargon vient après l'intuition,
+  expliqué à sa première apparition.
+- **Montrer un exemple concret avant** la règle générale.
+- Progression **simple → nuancé** : pas d'exception dans la phrase d'ouverture.
+- Adresse directe au lecteur ; anticiper **le piège classique** quand c'est pertinent.
+- Mémo en formules **télégraphiques** (3 à 4 puces).
+- Garder le **même rythme/format** que les autres pages.
+Beaucoup de retours ("trop long", "pas clair", "trop technique") se résolvent en
+appliquant un de ces principes — identifie lequel manque et corrige-le.
 
-## 3. Contraintes de forme
+## 3. Réécrire sans tout casser
 - Respecte le type Page (ne supprime pas de champ requis, garde l'id inchangé).
+- Ne change QUE ce qui est demandé ; garde intact ce qui convenait déjà.
 - La source reste valide (https) ; mets-la à jour seulement si le fond a changé.
 - Ne touche pas aux autres pages ni aux composants/au style.
+- Si le retour est vague, propose 1 à 2 variantes courtes de la partie concernée
+  AVANT de modifier le fichier — laisse l'utilisateur choisir.
 
 ## 4. Après
 - Relis : structure intacte, ton conforme, retour bien pris en compte.
